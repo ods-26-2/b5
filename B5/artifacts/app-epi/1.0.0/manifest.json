@@ -1,0 +1,44 @@
+{
+    "dataset_id": "dataset-app-epi",
+    "dataset_version": "1.0.0",
+    "created_at": "2026-10-15T17:43:24.510Z",
+    "owner": "MOD-1",
+    "origin": "Dataset do domínio 'app-epi' (epi)",
+    "labeling_criteria": {
+        "tool": "Roboflow",
+        "classes": [
+            "pessoa",
+            "capacete",
+            "colete"
+        ],
+        "rules": [
+            "Classes oficiais mapeadas: pessoa, capacete, colete.",
+            "Caixas delimitadoras (bboxes) ajustadas aos limites visíveis de cada objeto.",
+            "Ignorar oclusões severas (>80%) ou instâncias ilegíveis (<10x10 pixels)."
+        ]
+    },
+    "total_images": 2230,
+    "class_distribution": {
+        "train": {
+            "pessoa": 5080,
+            "capacete": 4341,
+            "colete": 2270
+        },
+        "val": {
+            "pessoa": 1413,
+            "capacete": 1267,
+            "colete": 601
+        },
+        "test": {
+            "pessoa": 689,
+            "capacete": 587,
+            "colete": 260
+        },
+        "total": {
+            "pessoa": 7182,
+            "capacete": 6195,
+            "colete": 3131
+        }
+    },
+    "hash_sha256": "efbcb91c4d119b217ec6681986d5bfe8f0a50a0cb9def80e4e236ba2f6148d8d"
+}

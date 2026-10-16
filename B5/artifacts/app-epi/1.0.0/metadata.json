@@ -1,0 +1,26 @@
+{
+    "artifact_id": "app-epi",
+    "artifact_version": "1.0.0",
+    "classes": [
+        "pessoa",
+        "capacete",
+        "colete"
+    ],
+    "input_shape": [
+        1,
+        3,
+        640,
+        640
+    ],
+    "precision": "FP32",
+    "metrics": {
+        "evaluation_split": "test",
+        "mAP50": 0.9517,
+        "mAP50_95": 0.5605,
+        "precision": 0.9397,
+        "recall": 0.9227
+    },
+    "dataset_version": "1.0.0",
+    "onnx_file": "app-epi.onnx",
+    "hash_sha256": "3da7aa2a6b50c1aa27333990aa4450a3ef34f2e9a3d05f9367bf1b9f6d363122"
+}
