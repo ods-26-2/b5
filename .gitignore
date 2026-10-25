@@ -1,0 +1,14 @@
+# Caches Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Datasets e treinos locais (pesados, não versionados)
+B5/datasets/
+B5/runs/
+runs/
+wandb/
+
+# Pesos intermediários (apenas .onnx oficiais em B5/artifacts/ são versionados)
+*.pt
