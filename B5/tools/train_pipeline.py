@@ -31,8 +31,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--dataset-id", type=str, default=None, help="ID do dataset (default: dataset-<artifact-id>)")
     parser.add_argument("--dataset-version", type=str, default="1.0.0", help="Versão do dataset")
     parser.add_argument("--model", type=str, default="yolov8s.pt", help="Peso base (yolo11n.pt, yolo11s.pt, yolov8s.pt)")
-    parser.add_argument("--epochs", type=int, default=100, help="Número máximo de épocas")
-    parser.add_argument("--patience", type=int, default=20, help="Épocas sem melhoria para early stopping")
+    parser.add_argument("--epochs", type=int, default=60, help="Número máximo de épocas")
+    parser.add_argument("--patience", type=int, default=15, help="Épocas sem melhoria para early stopping")
     parser.add_argument("--imgsz", type=int, default=640, help="Resolução de entrada")
     parser.add_argument("--batch", type=int, default=8, help="Batch size (8 é ideal para 6GB VRAM)")
     parser.add_argument("--origin", type=str, default=None, help="Descrição da origem do dataset para o manifest.json")
@@ -67,7 +67,7 @@ def main() -> None:
         device=device,
         workers=4,
         amp=True,
-        cache="disk",
+        cache=False,          # Evita estourar disco com 20k imagens (.npy)
         optimizer="AdamW",
         lr0=0.001,
         lrf=0.01,
@@ -76,14 +76,14 @@ def main() -> None:
         weight_decay=0.0005,
         mosaic=1.0,
         close_mosaic=10,
-        mixup=0.1,
+        mixup=0.0,            # Desativado para não misturar cores Mercosul vs Cinza
         degrees=5.0,
         translate=0.1,
         scale=0.5,
-        fliplr=0.5,
+        fliplr=0.0,           # Desativado para preservar orientação dos caracteres/layout
         flipud=0.0,
-        hsv_h=0.015,
-        hsv_s=0.7,
+        hsv_h=0.005,          # Reduzido para preservar a faixa azul da Mercosul
+        hsv_s=0.4,            # Reduzido para evitar desbotar azul para cinza
         hsv_v=0.4,
         project=str(project_dir),
         name=run_name,

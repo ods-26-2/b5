@@ -182,9 +182,9 @@ def package_model_artifact(
         "recall": round(float(metrics.box.mr), 4),
     }
 
-    # 4. Gerar run.json
+    # 4. Gerar run.json (Lendo automaticamente o args.yaml do treino se existir)
     default_hyperparams = {
-        "base_weights": "yolo11s.pt",
+        "base_weights": "yolov8s.pt",
         "batch_size": batch,
         "imgsz": imgsz,
         "optimizer": "AdamW",
@@ -193,6 +193,27 @@ def package_model_artifact(
         "cos_lr": True,
         "amp": True,
     }
+
+    # Tenta resgatar os parâmetros reais do treino gerados pelo Ultralytics
+    train_args_yaml = weights_pt.parent.parent / "args.yaml"
+    if train_args_yaml.exists():
+        with open(train_args_yaml, "r", encoding="utf-8") as f:
+            yolo_args = yaml.safe_load(f)
+        default_hyperparams.update({
+            "base_weights": str(yolo_args.get("model", default_hyperparams["base_weights"])),
+            "epochs_configured": yolo_args.get("epochs", 100),
+            "patience": yolo_args.get("patience", 20),
+            "batch_size": yolo_args.get("batch", batch),
+            "imgsz": yolo_args.get("imgsz", imgsz),
+            "optimizer": yolo_args.get("optimizer", "AdamW"),
+            "lr0": yolo_args.get("lr0", 0.001),
+            "lrf": yolo_args.get("lrf", 0.01),
+            "cos_lr": yolo_args.get("cos_lr", True),
+            "amp": yolo_args.get("amp", True),
+            "fliplr": yolo_args.get("fliplr", 0.0),
+            "mixup": yolo_args.get("mixup", 0.0),
+        })
+
     if hyperparams_override:
         default_hyperparams.update(hyperparams_override)
 
