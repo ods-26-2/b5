@@ -1,17 +1,17 @@
 {
     "message_type": "event",
-    "message_id": "68308fba-e2ac-4d1a-bf13-3ee079ca4f73",
+    "message_id": "90473ef9-5d3f-485e-83e2-c77b4c602406",
     "schema": "ods.artifact.published",
     "schema_version": "1.0",
     "producer": "B5",
-    "published_at": "2026-10-15T17:43:24.510Z",
+    "published_at": "2026-10-20T14:04:08.508Z",
     "payload": {
         "artifact_id": "app-epi",
         "artifact_version": "1.0.0",
         "kind": "MODEL",
         "owner": "MOD-1",
         "uri": "B5/artifacts/app-epi/1.0.0/app-epi.onnx",
-        "hash_sha256": "3da7aa2a6b50c1aa27333990aa4450a3ef34f2e9a3d05f9367bf1b9f6d363122",
-        "valid_from": "2026-10-15T17:43:24.510Z"
+        "hash_sha256": "08663f6ed39859f4b35a55718833e0aee6638be0ebc21830b8a6f10888d4615b",
+        "valid_from": "2026-10-20T14:04:08.508Z"
     }
 }

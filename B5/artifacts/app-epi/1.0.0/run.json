@@ -1,22 +1,26 @@
 {
     "run_id": "run-app-epi-v1.0.0",
-    "executed_at": "2026-10-15T17:43:24.510Z",
+    "executed_at": "2026-10-20T14:04:08.508Z",
     "script": "train_pipeline.py",
-    "dataset_id": "dataset-app-epi",
+    "dataset_id": "dataset-epi",
     "dataset_version": "1.0.0",
     "dataset_hash_sha256": "efbcb91c4d119b217ec6681986d5bfe8f0a50a0cb9def80e4e236ba2f6148d8d",
     "artifact_id": "app-epi",
     "artifact_version": "1.0.0",
-    "artifact_hash_sha256": "3da7aa2a6b50c1aa27333990aa4450a3ef34f2e9a3d05f9367bf1b9f6d363122",
+    "artifact_hash_sha256": "08663f6ed39859f4b35a55718833e0aee6638be0ebc21830b8a6f10888d4615b",
     "hyperparameters": {
-        "base_weights": "yolo11s.pt",
+        "base_weights": "yolov8s.pt",
         "batch_size": 8,
         "imgsz": 640,
         "optimizer": "AdamW",
         "lr0": 0.001,
         "lrf": 0.01,
         "cos_lr": true,
-        "amp": true
+        "amp": true,
+        "epochs_configured": 100,
+        "patience": 20,
+        "fliplr": 0.5,
+        "mixup": 0.1
     },
     "metrics": {
         "evaluation_split": "test",

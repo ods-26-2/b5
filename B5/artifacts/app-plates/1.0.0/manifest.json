@@ -1,0 +1,49 @@
+{
+    "dataset_id": "dataset-plates",
+    "dataset_version": "1.0.0",
+    "created_at": "2026-10-20T14:01:44.232Z",
+    "owner": "MOD-1",
+    "origin": "Dataset público de placas veiculares coletado via Roboflow/Kaggle (anotações de terceiros convertidas para formato YOLO)",
+    "labeling_criteria": {
+        "tool": "",
+        "classes": [
+            "placa_1L_BR",
+            "placa_1L_ME",
+            "placa_2L_BR",
+            "placa_2L_ME"
+        ],
+        "rules": [
+            "Classes oficiais mapeadas: placa_1L_BR, placa_1L_ME, placa_2L_BR, placa_2L_ME.",
+            "Caixas delimitadoras (bboxes) ajustadas aos limites visíveis de cada objeto.",
+            "Ignorar oclusões severas (>80%) ou instâncias ilegíveis (<10x10 pixels)."
+        ]
+    },
+    "total_images": 20000,
+    "class_distribution": {
+        "train": {
+            "placa_1L_BR": 3500,
+            "placa_1L_ME": 3500,
+            "placa_2L_BR": 3500,
+            "placa_2L_ME": 3500
+        },
+        "val": {
+            "placa_1L_BR": 1000,
+            "placa_1L_ME": 1000,
+            "placa_2L_BR": 1000,
+            "placa_2L_ME": 1000
+        },
+        "test": {
+            "placa_1L_BR": 500,
+            "placa_1L_ME": 500,
+            "placa_2L_BR": 500,
+            "placa_2L_ME": 500
+        },
+        "total": {
+            "placa_1L_BR": 5000,
+            "placa_1L_ME": 5000,
+            "placa_2L_BR": 5000,
+            "placa_2L_ME": 5000
+        }
+    },
+    "hash_sha256": "f421ad1a039a95c6b8c2b76a7c5323b80cacbd4d6c4124cab9208246f5e6d886"
+}

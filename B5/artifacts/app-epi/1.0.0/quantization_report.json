@@ -1,0 +1,67 @@
+{
+    "artifact_id": "app-epi",
+    "artifact_version": "1.0.0",
+    "dataset_version": "1.0.0",
+    "evaluation_split": "test",
+    "disjoint_from_train": true,
+    "hardware_evaluated": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+    "generated_at": "2026-10-20T14:18:49Z",
+    "results": {
+        "FP32": {
+            "mAP50": 0.9517,
+            "mAP50_95": 0.5605,
+            "precision": 0.9397,
+            "recall": 0.9227,
+            "performance": {
+                "device_measured": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+                "model_size_mb": 42.68,
+                "preprocess_ms": 0.41,
+                "inference_batch_ms": 9.71,
+                "postprocess_ms": 0.45,
+                "single_frame_latency_mean_ms": 13.82,
+                "single_frame_latency_p95_ms": 14.31,
+                "throughput_fps": 72.3,
+                "vram_peak_mb": 122.01
+            }
+        },
+        "FP16": {
+            "mAP50": 0.9512,
+            "mAP50_95": 0.5611,
+            "precision": 0.938,
+            "recall": 0.9234,
+            "performance": {
+                "device_measured": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+                "model_size_mb": 21.34,
+                "preprocess_ms": 0.44,
+                "inference_batch_ms": 5.41,
+                "postprocess_ms": 1.12,
+                "single_frame_latency_mean_ms": 8.45,
+                "single_frame_latency_p95_ms": 8.95,
+                "throughput_fps": 118.3,
+                "vram_peak_mb": 108.18
+            },
+            "delta_mAP50_vs_fp32": -0.0005,
+            "speedup_vs_fp32": "1.64x"
+        },
+        "INT8": {
+            "mAP50": 0.952,
+            "mAP50_95": 0.5611,
+            "precision": 0.9348,
+            "recall": 0.9179,
+            "performance": {
+                "device_measured": "CPU",
+                "model_size_mb": 10.96,
+                "preprocess_ms": 17.48,
+                "inference_batch_ms": 113.42,
+                "postprocess_ms": 5.56,
+                "single_frame_latency_mean_ms": 196.96,
+                "single_frame_latency_p95_ms": 222.62,
+                "throughput_fps": 5.1,
+                "vram_peak_mb": 0.0
+            },
+            "delta_mAP50_vs_fp32": 0.0003,
+            "speedup_vs_fp32": "0.07x"
+        }
+    },
+    "sis1_recommendation": "Compilar engine TensorRT em FP16 na Jetson Orin Nano (P2): reduz o footprint dos pesos pela metade (42.68 MB -> 21.34 MB), atinge 118.3 FPS (latência média de 8.45 ms/quadro, speedup de 1.64x sobre FP32) e mantém variação de mAP@0.5 desprezível (-0.0005)."
+}
