@@ -1,0 +1,38 @@
+{
+    "run_id": "run-app-plates-v1.0.0",
+    "executed_at": "2026-10-20T14:01:44.232Z",
+    "script": "train_pipeline.py",
+    "dataset_id": "dataset-plates",
+    "dataset_version": "1.0.0",
+    "dataset_hash_sha256": "f421ad1a039a95c6b8c2b76a7c5323b80cacbd4d6c4124cab9208246f5e6d886",
+    "artifact_id": "app-plates",
+    "artifact_version": "1.0.0",
+    "artifact_hash_sha256": "b698a519e92752fab804c4cb1556547d79713b15f7cd6d543d3760aeadb46521",
+    "hyperparameters": {
+        "base_weights": "yolov8s.pt",
+        "batch_size": 16,
+        "imgsz": 640,
+        "optimizer": "AdamW",
+        "lr0": 0.001,
+        "lrf": 0.01,
+        "cos_lr": true,
+        "amp": true,
+        "epochs_configured": 60,
+        "patience": 15,
+        "fliplr": 0.0,
+        "mixup": 0.0
+    },
+    "metrics": {
+        "evaluation_split": "test",
+        "mAP50": 0.995,
+        "mAP50_95": 0.9581,
+        "precision": 0.999,
+        "recall": 1.0
+    },
+    "hardware_benchmark_p2": {
+        "target_device": "Jetson Orin Nano 8GB",
+        "status": "pending_p2_compilation",
+        "latency_ms": null,
+        "gpu_memory_mb": null
+    }
+}

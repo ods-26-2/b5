@@ -1,11 +1,11 @@
 {
-    "dataset_id": "dataset-app-epi",
+    "dataset_id": "dataset-epi",
     "dataset_version": "1.0.0",
-    "created_at": "2026-10-15T17:43:24.510Z",
+    "created_at": "2026-10-20T14:04:08.508Z",
     "owner": "MOD-1",
-    "origin": "Dataset do domínio 'app-epi' (epi)",
+    "origin": "Dataset público de pessoas e epis coletado via Roboflow (anotações de terceiros convertidas para formato YOLO)",
     "labeling_criteria": {
-        "tool": "Roboflow",
+        "tool": "",
         "classes": [
             "pessoa",
             "capacete",
